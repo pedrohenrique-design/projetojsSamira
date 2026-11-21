@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONG Esperança</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>ONG Esperança</h1>
+            </div>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <ul class="links" id="menuLinks">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#doacao">Doação</a></li>
+                <li><a href="#voluntario">Voluntário</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-texto">
+                <h2>Transformando Vidas</h2>
+                <p>Juntos fazemos diferença</p>
+                <button class="botao" id="btnSaibaMais">Saiba Mais</button>
+            </div>
+        </section>
+
+        <section id="sobre" class="sobre">
+            <div class="conteudo">
+                <h2>Sobre Nossa ONG</h2>
+                <div class="sobre-flex">
+                    <div class="sobre-texto">
+                        <p>Somos uma organização dedicada a ajudar comunidades em situação de vulnerabilidade. Nossa missão é transformar vidas através de projetos sociais e educacionais.</p>
+                        <p>Com mais de 10 anos de atuação, já ajudamos milhares de pessoas em diversas regiões do país.</p>
+
+                        <div class="estatisticas">
+                            <div class="stat-item">
+                                <span class="contador" data-valor="5000">0</span>
+                                <p>Famílias Atendidas</p>
+                            </div>
+                            <div class="stat-item">
+                                <span class="contador" data-valor="150">0</span>
+                                <p>Voluntários</p>
+                            </div>
+                            <div class="stat-item">
+                                <span class="contador" data-valor="25">0</span>
+                                <p>Projetos Ativos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sobre-img">
+                        <img src="imagens/equipe.png" alt="Equipe">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos" class="projetos">
+            <div class="conteudo">
+                <h2>Nossos Projetos</h2>
+                <div class="galeria">
+                    <div class="projeto">
+                        <img src="imagens/alimentacao.png" alt="Projeto Alimentação">
+                        <h3>Alimentação</h3>
+                        <p>Distribuição de cestas básicas para famílias carentes.</p>
+                    </div>
+                    <div class="projeto">
+                        <img src="imagens/img3.png" alt="Projeto Educação">
+                        <h3>Educação</h3>
+                        <p>Aulas e reforço escolar para crianças e jovens.</p>
+                    </div>
+                    <div class="projeto">
+                        <img src="imagens/saude.png" alt="Projeto Saúde">
+                        <h3>Saúde</h3>
+                        <p>Atendimento médico básico na comunidade.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="doacao" class="doacao">
+            <div class="conteudo">
+                <h2>Como Doar</h2>
+                <div class="doacao-opcoes">
+                    <div class="opcao-doacao">
+                        <h3>Doação Única</h3>
+                        <p>Faça uma doação única no valor que desejar.</p>
+                        <button class="botao btn-doar">Doar</button>
+                    </div>
+                    <div class="opcao-doacao">
+                        <h3>Doação Mensal</h3>
+                        <p>Seja um doador recorrente e ajude de forma contínua.</p>
+                        <button class="botao btn-doar">Contribuir</button>
+                    </div>
+                    <div class="opcao-doacao">
+                        <h3>Doação em Espécie</h3>
+                        <p>Doe alimentos, roupas ou materiais escolares.</p>
+                        <button class="botao btn-doar">Informar</button>
+                    </div>
+                </div>
+
+                <div class="conversor-moeda">
+                    <h3>Conversor de Doação</h3>
+                    <p>Digite um valor em Reais e veja quanto vale em Dólar e Euro.</p>
+                    <div class="conversor-input">
+                        <label for="valorBRL">Valor em R$:</label>
+                        <input type="number" id="valorBRL" placeholder="100">
+                        <button type="button" id="btnConverter" class="botao">Converter</button>
+                    </div>
+                    <div id="resultadoConversao" class="resultado-conversao"></div>
+                    <div id="impactoDoacao" class="impacto-doacao"></div>
+                </div>
+
+                <div class="formulario-doacao">
+                    <h3>Doação Online</h3>
+                    <form id="formDoacao">
+                        <input type="text" id="doacaoNome" placeholder="Seu Nome">
+                        <input type="email" id="doacaoEmail" placeholder="Seu Email">
+                        <input type="number" id="doacaoValor" placeholder="Valor (R$)">
+                        <button type="submit" class="botao">Enviar</button>
+                    </form>
+                    <p id="mensagemDoacao" class="mensagem-form"></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="video">
+            <div class="conteudo">
+                <h2>Conheça Nossa História</h2>
+                <iframe width="100%" height="400" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section id="voluntario" class="voluntario">
+            <div class="conteudo">
+                <h2>Seja um Voluntário</h2>
+                <p class="subtitulo">Faça parte da nossa equipe e transforme vidas!</p>
+
+                <form id="formVoluntario" class="form-voluntario">
+                    <div class="form-group">
+                        <label for="nomeVoluntario">Nome Completo:</label>
+                        <input type="text" id="nomeVoluntario">
+                        <span class="feedback" id="feedbackNome"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="emailVoluntario">Email:</label>
+                        <input type="text" id="emailVoluntario">
+                        <span class="feedback" id="feedbackEmail"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefoneVoluntario">Telefone:</label>
+                        <input type="tel" id="telefoneVoluntario" placeholder="(11) 99999-9999">
+                        <span class="feedback" id="feedbackTelefone"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="senhaVoluntario">Senha (mínimo 8 caracteres):</label>
+                        <input type="password" id="senhaVoluntario">
+                        <span class="feedback" id="feedbackSenha"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cepVoluntario">CEP:</label>
+                        <div class="cep-input">
+                            <input type="text" id="cepVoluntario" placeholder="12345-678" maxlength="9">
+                            <button type="button" id="btnBuscarCEP" class="botao-cep">Buscar CEP</button>
+                        </div>
+                        <span class="feedback" id="feedbackCEP"></span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="ruaVoluntario">Rua:</label>
+                            <input type="text" id="ruaVoluntario">
+                        </div>
+                        <div class="form-group">
+                            <label for="numeroVoluntario">Número:</label>
+                            <input type="text" id="numeroVoluntario">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bairroVoluntario">Bairro:</label>
+                            <input type="text" id="bairroVoluntario">
+                        </div>
+                        <div class="form-group">
+                            <label for="cidadeVoluntario">Cidade:</label>
+                            <input type="text" id="cidadeVoluntario">
+                        </div>
+                        <div class="form-group">
+                            <label for="estadoVoluntario">Estado:</label>
+                            <input type="text" id="estadoVoluntario" maxlength="2">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="disponibilidade">Disponibilidade:</label>
+                            <select id="disponibilidade">
+                                <option value="">Selecione...</option>
+                                <option value="manha">Manhã</option>
+                                <option value="tarde">Tarde</option>
+                                <option value="noite">Noite</option>
+                                <option value="fds">Finais de Semana</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="areaInteresse">Área de Interesse:</label>
+                            <select id="areaInteresse">
+                                <option value="">Selecione...</option>
+                                <option value="educacao">Educação</option>
+                                <option value="saude">Saúde</option>
+                                <option value="alimentacao">Alimentação</option>
+                                <option value="eventos">Eventos</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="botao botao-enviar">Enviar Cadastro</button>
+                </form>
+
+                <p id="mensagemSucesso" class="mensagem-sucesso"></p>
+            </div>
+        </section>
+
+        <section id="contato" class="contato">
+            <div class="conteudo">
+                <h2>Entre em Contato</h2>
+                <div class="contato-flex">
+                    <div class="info-contato">
+                        <h3>Informações</h3>
+                        <p><strong>Telefone:</strong> (11) 9999-9999</p>
+                        <p><strong>Email:</strong> contato@esperanca.org.br</p>
+                        <p><strong>Endereço:</strong> Rua da Solidariedade, 123</p>
+
+                        <h3 class="titulo-mapa">Sede e pontos de coleta</h3>
+                        <div id="mapa" class="mapa-container"></div>
+                    </div>
+                    <div class="formulario-contato">
+                        <h3>Envie Mensagem</h3>
+                        <form id="formContato">
+                            <input type="text" id="contatoNome" placeholder="Nome">
+                            <input type="email" id="contatoEmail" placeholder="Email">
+                            <textarea id="contatoMensagem" placeholder="Mensagem" rows="5" maxlength="500"></textarea>
+                            <small id="contadorCaracteres">0/500 caracteres</small>
+                            <button type="submit" class="botao">Enviar</button>
+                        </form>
+                        <p id="mensagemContato" class="mensagem-form"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="conteudo-footer">
+            <p>&copy; 2026 ONG Esperança. Todos os direitos reservados.</p>
+            <div class="redes">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="voltarTopo" class="voltar-topo">↑</button>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
